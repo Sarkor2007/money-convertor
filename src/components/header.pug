@@ -1,0 +1,19 @@
+mixin header()
+    header.header#header 
+        .container.header__con 
+            button.header__menu menu <span class="header__con-back-btn" />
+            a.header__logo.news-close(href="#") LOGO 
+            .header__lang 
+                .header__lang-title
+                    img(src="@img/uz.png", alt="")
+                    p uz
+                .header__lang-toggle
+                    .header__lang-toggle-btn.active(img-path="img/uz.png")
+                        img(src="@img/uz.png", alt="")
+                        p uz
+                    .header__lang-toggle-btn(img-path="img/ru.png")
+                        img(src="@img/ru.png", alt="")
+                        p ru
+                    .header__lang-toggle-btn(img-path="img/en.png")
+                        img(src="@img/en.png", alt="")
+                        p en

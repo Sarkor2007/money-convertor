@@ -1,0 +1,18 @@
+// Sass переменные
+
+$z-indexes: (
+    'header': 50,
+    'menu': 100,
+    'modal': 500,
+    'dropdown': 40,
+    'default': 1,
+    'below': -1,
+);
+
+@function z($layer) {
+    @if not map-has-key($z-indexes, $layer) {
+        @error 'Нет слоя с именем `#{$layer}` в $z-indexes.'
+            + 'Слой должен быть одним из #{map-keys($z-indexes)}.';
+    }
+    @return map-get($z-indexes, $layer);
+}
