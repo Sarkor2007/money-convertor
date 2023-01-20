@@ -1,65 +1,73 @@
-.menu{
+.menu {
     width: 100%;
-    height: 0;
     overflow: hidden;
+    height: 0;
     position: fixed;
     left: 0;
     background-color: var(--primary-bg-color);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     opacity: 0.6;
     box-shadow: 0 0 10px 3px #e5e5e5;
-    &__con{
+    &__con {
         display: flex;
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
         gap: 40px;
     }
-    &.active{
-        transition: all .4s ease-in-out;
-        padding: 40px;
+    &.active {
+        transition: all 0.4s ease-in-out;
+        padding: 30px 40px;
         opacity: 1;
+        height: fit-content !important;
+        @media (max-width: 576px) {
+            padding: 20px;
+        }
     }
-    &__ul{
+    &__ul {
         list-style: none;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 40px;
         flex-wrap: wrap;
+        @media (max-width: 576px) {
+            gap: 25px;
+            justify-content: space-around;
+        }
     }
-    &__li{
+    &__li {
         padding-bottom: 4px;
-        a{
+        a {
             font-size: 15px;
             font-weight: 400;
             color: var(--primary-text-color);
-            &::after{
-                content: '';
+            &::after {
+                content: "";
                 position: absolute;
                 bottom: -6px;
                 left: -4px;
                 width: calc(100% + 8px);
                 height: 2px;
                 display: block;
-                transition: .2s;
+                transition: 0.2s;
                 background-color: #238636;
                 opacity: 0;
             }
-            &:hover{
+            &:hover {
                 position: relative;
                 color: #238636;
-                transition: color .2s;
-                &::after{
+                transition: color 0.2s;
+                &::after {
                     opacity: 1;
                 }
             }
         }
     }
-    .locations-rate{
+    .locations-rate {
         width: 100%;
         position: relative;
-        &__con{
+        &__con {
             width: 100%;
             height: 100%;
             display: flex;
@@ -68,8 +76,8 @@
             overflow-x: scroll;
             padding-right: 40px;
             padding-bottom: 25px;
-            &::after{
-                content: '';
+            &::after {
+                content: "";
                 display: block;
                 width: 0;
                 height: 100%;
@@ -77,20 +85,23 @@
                 top: 0;
                 right: 0;
                 box-shadow: 50px 0 70px 100px var(--primary-bg-color);
+                @media (max-width: 576px) {
+                    box-shadow: 50px 0 40px 70px var(--primary-bg-color);
+                }
             }
-            &::-webkit-scrollbar{
+            &::-webkit-scrollbar {
                 background-color: var(--primary-bg-color);
                 height: 5px;
                 border-radius: 2px;
             }
-            &::-webkit-scrollbar-thumb{
+            &::-webkit-scrollbar-thumb {
                 background-color: #b0afaf;
                 border-radius: 2px;
             }
         }
-        &__box{
+        &__box {
             background: linear-gradient(var(--primary-bg-color), var(--primary-bg-color)) padding-box,
-                        linear-gradient(to right, var(--primary-text-color), #b0afaf) border-box;
+                linear-gradient(to right, var(--primary-text-color), #b0afaf) border-box;
             border-radius: 6px;
             border: 1px solid transparent;
             padding: 30px;
@@ -98,12 +109,12 @@
             justify-content: center;
             gap: 20px;
             align-items: center;
-            img{
+            img {
                 width: 20px;
                 position: relative;
                 top: 2px;
             }
-            p{
+            p {
                 text-transform: uppercase;
                 color: var(--primary-text-color);
                 font-size: 16px;
